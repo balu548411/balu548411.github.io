@@ -16,8 +16,8 @@
         :root {
             --primary-neon: #00ff88;
             --secondary-neon: #00d4ff;
-            --accent-pink: #ff006e;
             --accent-purple: #8338ec;
+            --accent-orange: #ff9500;
             --bg-dark: #0a0a0f;
             --bg-darker: #050508;
             --bg-card: rgba(255, 255, 255, 0.03);
@@ -26,8 +26,8 @@
             --text-muted: #666666;
             --border-glow: rgba(0, 255, 136, 0.3);
             --shadow-neon: 0 0 20px rgba(0, 255, 136, 0.3);
-            --gradient-main: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #ff006e 100%);
-            --gradient-card: linear-gradient(145deg, rgba(0, 255, 136, 0.1), rgba(255, 0, 110, 0.1));
+            --gradient-main: linear-gradient(135deg, #00ff88 0%, #00d4ff 50%, #8338ec 100%);
+            --gradient-card: linear-gradient(145deg, rgba(0, 255, 136, 0.1), rgba(131, 56, 236, 0.1));
         }
 
         body {
@@ -114,7 +114,7 @@
 
         .logo::before {
             content: '> ';
-            color: var(--accent-pink);
+            color: var(--accent-orange);
         }
 
         .nav-menu {
@@ -310,7 +310,7 @@
         .code-line:nth-child(8) { animation-delay: 5s; }
 
         .code-comment { color: var(--text-muted); }
-        .code-keyword { color: var(--accent-pink); }
+        .code-keyword { color: var(--accent-orange); }
         .code-string { color: var(--primary-neon); }
         .code-function { color: var(--secondary-neon); }
 
@@ -515,37 +515,19 @@
         }
 
         .tech-badge {
-            background: rgba(255, 0, 110, 0.1);
-            color: var(--accent-pink);
+            background: rgba(131, 56, 236, 0.1);
+            color: var(--accent-purple);
             padding: 0.3rem 0.8rem;
             border-radius: 15px;
             font-size: 0.8rem;
-            border: 1px solid rgba(255, 0, 110, 0.3);
+            border: 1px solid rgba(131, 56, 236, 0.3);
         }
 
-        .project-links {
-            display: flex;
-            gap: 1rem;
-        }
 
-        .project-link {
-            color: var(--secondary-neon);
-            text-decoration: none;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .project-link:hover {
-            color: var(--primary-neon);
-            text-shadow: 0 0 10px var(--primary-neon);
-        }
 
         /* Contact Section */
         .contact {
-            background: radial-gradient(ellipse at center, rgba(255, 0, 110, 0.1) 0%, transparent 70%);
+            background: radial-gradient(ellipse at center, rgba(131, 56, 236, 0.1) 0%, transparent 70%);
         }
 
         .contact-container {
@@ -721,6 +703,22 @@
             }
         }
 
+        /* Cyber Mode Enhancement */
+        body.cyber-mode {
+            --primary-neon: #00ffff;
+            --secondary-neon: #ff9500;
+            --accent-purple: #00ff88;
+            --gradient-main: linear-gradient(135deg, #00ffff 0%, #ff9500 50%, #00ff88 100%);
+        }
+
+        body.cyber-mode .hero {
+            background: radial-gradient(ellipse at center, rgba(0, 255, 255, 0.15) 0%, transparent 70%);
+        }
+
+        body.cyber-mode .contact {
+            background: radial-gradient(ellipse at center, rgba(255, 149, 0, 0.1) 0%, transparent 70%);
+        }
+
         /* Background Effects */
         .bg-grid {
             position: fixed;
@@ -791,12 +789,12 @@
                 <div class="terminal-body">
                     <div class="code-line"><span class="code-comment"># Advanced AI Engineer</span></div>
                     <div class="code-line"><span class="code-keyword">class</span> <span class="code-function">BalajiVantari</span>:</div>
-                    <div class="code-line">    <span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):</div>
-                    <div class="code-line">        self.skills = [<span class="code-string">"LLMs"</span>, <span class="code-string">"Computer Vision"</span>, <span class="code-string">"MLOps"</span>]</div>
-                    <div class="code-line">        self.experience = <span class="code-string">"2+ years of AI excellence"</span></div>
-                    <div class="code-line">        self.accuracy = <span class="code-string">"94.2%"</span></div>
-                    <div class="code-line">    <span class="code-keyword">def</span> <span class="code-function">build_future</span>(self):</div>
-                    <div class="code-line">        <span class="code-keyword">return</span> <span class="code-string">"Revolutionary AI Solutions"</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-function">__init__</span>(self):</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.skills = [<span class="code-string">"LLMs"</span>, <span class="code-string">"Computer Vision"</span>, <span class="code-string">"MLOps"</span>]</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.experience = <span class="code-string" id="dynamic-experience-code">"2+ years of AI excellence"</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;self.accuracy = <span class="code-string">"94.2%"</span></div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">def</span> <span class="code-function">build_future</span>(self):</div>
+                    <div class="code-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">return</span> <span class="code-string">"Revolutionary AI Solutions"</span></div>
                 </div>
             </div>
         </div>
@@ -808,13 +806,13 @@
             <h2 class="section-title">./about --verbose</h2>
             <div class="about-grid">
                 <div class="about-text">
-                    <p>I'm a passionate AI Engineer with 2+ years of experience building cutting-edge machine learning solutions. My expertise spans Large Language Models, Computer Vision, and Vision-Language Models.</p>
+                    <p>I'm a passionate AI Engineer with <span id="dynamic-experience-text">2+ years</span> of experience building cutting-edge machine learning solutions. My expertise spans Large Language Models, Computer Vision, and Vision-Language Models.</p>
                     <p>I specialize in fine-tuning models using advanced techniques like LoRA/QLoRA, implementing scalable AI pipelines, and deploying production-ready systems that solve real-world challenges.</p>
                     <p>From multimodal RAG systems to industrial automation, I bridge the gap between innovative research and practical implementation.</p>
                 </div>
                 <div class="stats-grid">
                     <div class="stat-card">
-                        <div class="stat-number">2+</div>
+                        <div class="stat-number" id="dynamic-experience-stat">2+</div>
                         <div class="stat-label">Years Experience</div>
                     </div>
                     <div class="stat-card">
@@ -903,10 +901,6 @@
                             <span class="tech-badge">FastAPI</span>
                             <span class="tech-badge">Vector DB</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-external-link-alt"></i> Demo</a>
-                        </div>
                     </div>
                 </div>
                 
@@ -927,10 +921,6 @@
                             <span class="tech-badge">TensorRT</span>
                             <span class="tech-badge">ONNX</span>
                             <span class="tech-badge">Edge AI</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-chart-line"></i> Results</a>
                         </div>
                     </div>
                 </div>
@@ -953,10 +943,6 @@
                             <span class="tech-badge">Flash Attention</span>
                             <span class="tech-badge">OCR</span>
                         </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-file-pdf"></i> Paper</a>
-                        </div>
                     </div>
                 </div>
                 
@@ -977,10 +963,6 @@
                             <span class="tech-badge">W&B</span>
                             <span class="tech-badge">Kubernetes</span>
                             <span class="tech-badge">MLOps</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link"><i class="fab fa-github"></i> Code</a>
-                            <a href="#" class="project-link"><i class="fas fa-book"></i> Docs</a>
                         </div>
                     </div>
                 </div>
@@ -1046,9 +1028,6 @@
                     </a>
                     <a href="mailto:vantaribalaji1221@gmail.com" class="social-link">
                         <i class="fas fa-envelope"></i>
-                    </a>
-                    <a href="https://twitter.com/balaji_vantari" target="_blank" class="social-link">
-                        <i class="fab fa-twitter"></i>
                     </a>
                 </div>
             </div>
@@ -1129,10 +1108,10 @@
             observer.observe(section);
         });
 
-        // Terminal theme toggle
-        document.getElementById('themeToggle').addEventListener('click', () => {
-            document.body.style.filter = document.body.style.filter === 'hue-rotate(180deg)' ? '' : 'hue-rotate(180deg)';
-        });
+                 // Terminal theme toggle - Enhanced cyberpunk mode
+         document.getElementById('themeToggle').addEventListener('click', () => {
+             document.body.classList.toggle('cyber-mode');
+         });
 
         // Matrix effect on hero section
         function createMatrixEffect() {
@@ -1184,26 +1163,67 @@
         // Initialize matrix effect
         setTimeout(createMatrixEffect, 3000);
 
-        // Add cyber glitch effect
-        setInterval(() => {
-            const elements = document.querySelectorAll('.hero-content h1, .section-title');
-            elements.forEach(el => {
-                if (Math.random() > 0.98) {
-                    el.style.textShadow = '2px 0 #ff006e, -2px 0 #00d4ff';
-                    setTimeout(() => {
-                        el.style.textShadow = '';
-                    }, 50);
-                }
-            });
-        }, 100);
+                 // Add cyber glitch effect
+         setInterval(() => {
+             const elements = document.querySelectorAll('.hero-content h1, .section-title');
+             elements.forEach(el => {
+                 if (Math.random() > 0.98) {
+                     el.style.textShadow = '2px 0 #8338ec, -2px 0 #00d4ff';
+                     setTimeout(() => {
+                         el.style.textShadow = '';
+                     }, 50);
+                 }
+             });
+         }, 100);
 
-        // Terminal cursor animation
-        setInterval(() => {
-            const cursor = document.querySelector('.cursor-blink');
-            if (cursor) {
-                cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
-            }
-        }, 500);
-    </script>
+                 // Terminal cursor animation
+         setInterval(() => {
+             const cursor = document.querySelector('.cursor-blink');
+             if (cursor) {
+                 cursor.style.opacity = cursor.style.opacity === '0' ? '1' : '0';
+             }
+         }, 500);
+
+         // Dynamic Experience Calculator
+         function updateExperience() {
+             const startDate = new Date('2023-02-01'); // February 2023 - Career start
+             const currentDate = new Date();
+             
+             // Calculate difference in months
+             const diffTime = currentDate - startDate;
+             const diffMonths = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 30.44)); // Average days per month
+             const years = Math.floor(diffMonths / 12);
+             const months = diffMonths % 12;
+             
+             let experienceText = '';
+             let experienceShort = '';
+             
+             if (years >= 1) {
+                 if (months >= 6) {
+                     experienceShort = `${years + 0.5}+`;
+                     experienceText = `${years}.5+ years`;
+                 } else {
+                     experienceShort = `${years}+`;
+                     experienceText = `${years}+ years`;
+                 }
+             } else {
+                 experienceShort = `${months}`;
+                 experienceText = `${months} months`;
+             }
+             
+             // Update all dynamic experience elements
+             const statElement = document.getElementById('dynamic-experience-stat');
+             const textElement = document.getElementById('dynamic-experience-text');
+             const codeElement = document.getElementById('dynamic-experience-code');
+             
+             if (statElement) statElement.textContent = experienceShort;
+             if (textElement) textElement.textContent = experienceText;
+             if (codeElement) codeElement.textContent = `"${experienceText} of AI excellence"`;
+         }
+
+         // Update experience immediately and then every day
+         updateExperience();
+         setInterval(updateExperience, 24 * 60 * 60 * 1000); // Update daily
+     </script>
 </body>
 </html>
